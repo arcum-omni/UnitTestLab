@@ -12,10 +12,13 @@ namespace BusinessLogic
         /// <returns></returns>
         public static bool IsSsn(string ssn)
         {
-            // Regex
+            if (string.IsNullOrWhiteSpace(ssn))
+            {
+                return false;
+            }
 
-            // TODO: test to ensure SSN is correct format, regex
-            throw new NotImplementedException();
+            Regex validSSN = new Regex(@"^\d{3}?-?\d{2}?-?\d{4}?$");
+            return validSSN.IsMatch(ssn);
         }
 
         /// <summary>
@@ -27,10 +30,11 @@ namespace BusinessLogic
         /// <returns></returns>
         public static bool IsWithinRange(int numToTest, int minValue, int maxValue)
         {
-            // if statements
-
-            // TODO: test to ensure number is within specified range
-            throw new NotImplementedException();
+            if (numToTest >= minValue && numToTest <= maxValue)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -12,10 +12,8 @@ namespace BusinessLogicTests
         [DataRow("428-52-1234")]
         public void IsValidSsn_ValidInput_ReturnTrue(string input)
         {
-            //This should pass
-            
-            //TODO: Test the IsValidSSN method in the Validator class
-            Assert.Fail();
+            bool validSSN = BusinessLogic.Validator.IsSsn(input);
+            Assert.IsTrue(validSSN);
         }
 
         [TestMethod]
@@ -25,10 +23,8 @@ namespace BusinessLogicTests
         [DataRow("TenLetters")]
         public void IsValidSsn_InvalidInput_ReturnsFalse(string input)
         {
-            // This should fail
-
-            //TODO: Test the IsValidSSN method in the Validator class
-            Assert.Fail();
+            bool validSSN = BusinessLogic.Validator.IsSsn(input);
+            Assert.IsFalse(validSSN);
         }
 
         [TestMethod]
@@ -38,10 +34,8 @@ namespace BusinessLogicTests
         [DataRow(2000, 0, 50000)]
         public void IsWithinRange_NumInInclusiveRange_ReturnTrue(int test, int min, int max)
         {
-            // This should pass
-
-            //TODO: Test the IsWithinRange method in the Validator class
-            Assert.Fail();
+            bool inRange = BusinessLogic.Validator.IsWithinRange(test, min, max);
+            Assert.IsTrue(inRange);
         }
 
         [TestMethod]
@@ -50,10 +44,8 @@ namespace BusinessLogicTests
         [DataRow(10000, 0, 5000)]
         public void IsWithinRange_NumOutsideInclusiveRange_ReturnsFalse(int test, int min, int max)
         {
-            // This should fail
-
-            //TODO: Test the IsWithinRange method in the Validator class
-            Assert.Fail();
+            bool inRange = BusinessLogic.Validator.IsWithinRange(test, min, max);
+            Assert.IsFalse(inRange);
         }
     }
 }
