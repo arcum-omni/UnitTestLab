@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace BusinessLogic
 {
@@ -11,6 +12,9 @@ namespace BusinessLogic
         /// <returns></returns>
         public static bool IsSsn(string ssn)
         {
+            // Regex
+
+            // TODO: test to ensure SSN is correct format, regex
             throw new NotImplementedException();
         }
 
@@ -23,6 +27,9 @@ namespace BusinessLogic
         /// <returns></returns>
         public static bool IsWithinRange(int numToTest, int minValue, int maxValue)
         {
+            // if statements
+
+            // TODO: test to ensure number is within specified range
             throw new NotImplementedException();
         }
     }
